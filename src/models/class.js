@@ -21,6 +21,9 @@ Class.init({
         },
         unique: true,
     },
+    about: {
+        type: DataTypes.STRING,
+    },
     members: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         defaultValue: [],
