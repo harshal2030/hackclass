@@ -6,11 +6,7 @@ const Class = require('./class');
 class Topic extends Model {}
 
 Topic.init({
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    class: {
+    className: {
         type: DataTypes.STRING,
         allowNull: false,
         references: {
@@ -18,10 +14,19 @@ Topic.init({
             key: 'className'
         },
     },
-    
+    title: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+    },
 }, {
     sequelize,
     modelName: 'topics',
     freezeTableName: true,
     timestamps: true,
-})
+});
+
+module.exports = Topic;
