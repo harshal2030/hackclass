@@ -16,7 +16,7 @@ async function loginAuth(e) {
         'Content-Type': 'application/json',
       };
 
-    const response = await fetch('http://testreactapp.me/users/signup', {
+    const response = await fetch('https://testreactapp.me/users/signup', {
         method: 'post',
         headers: requestHeaders,
         body: loginData,
@@ -25,7 +25,8 @@ async function loginAuth(e) {
     const data = await response.json();
     console.log(data);
     
-    
+    usernameField.reset();
+    passwordField.reset();
 }
 
 loginForm.addEventListener('submit', loginAuth)
