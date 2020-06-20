@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.video,
+.source {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.source {
+  height: 65%;
+  width: 77%;
+  background: #f9ecec;
+  border-radius: 6px;
+}
+
+.authorisation {
+  background: #111f3f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.authorisation .wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.auth-type {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 2rem;
+}
+
+.auth-type .btn {
+  color: #fff;
+  background: #28344f;
+  text-decoration: none;
+  padding: 0.6rem 2.2rem;
+  border-radius: 4px;
+}
+
+.auth-type .ghost-btn {
+  background: transparent;
+  outline: 3px solid #28344f;
+  outline-offset: -3px;
+  -moz-outline-radius: 4px;
+}
+
+.input-field {
+  padding: 0.6rem 0;
+}
+
+.login label,
+.login input {
+  display: block;
+}
+
+.login input {
+  width: 100%;
+  background: transparent;
+  padding: 0.4rem 0.2rem;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.submit-login {
+  border: 2px solid #fff;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #073a7e, #489bd8);
+  color: #fff;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  padding: 0.4rem 0.2rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
