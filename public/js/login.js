@@ -19,7 +19,7 @@ async function loginAuth(e) {
     const response = await fetch('https://testreactapp.me/users/signup', {
         method: 'post',
         headers: requestHeaders,
-        body: loginData,
+        body: JSON.stringify(loginData),
     });
 
     const data = await response.json();
