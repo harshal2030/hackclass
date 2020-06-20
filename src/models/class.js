@@ -19,6 +19,7 @@ Class.init({
         validate: {
             min: 1,
         },
+        unique: true,
     },
     members: {
         type: DataTypes.ARRAY(DataTypes.STRING),
