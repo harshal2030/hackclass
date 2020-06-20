@@ -24,6 +24,7 @@ async function loginAuth(e) {
 
     const data = await response.json();
     console.log(data);
+    window.location.replace('https://testreactapp.me/home');
     
     usernameField.reset();
     passwordField.reset();

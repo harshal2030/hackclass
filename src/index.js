@@ -6,22 +6,28 @@ const userRouter = require('./routers/users');
 const classRouter = require('./routers/class');
 const topicRouter = require('./routers/topics');
 
-const avatarPath = path.join(__dirname, '..');
+const publicPath = path.join(__dirname, '../public');
+
+const indexFile = path.join(__dirname, '../public/index.html');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(avatarPath));
+app.use(express.static(publicPath));
 
 app.use(userRouter);
 app.use(classRouter);
 app.use(topicRouter);
 
 app.get('/', (req, res) => {
-    res.send('testing hack jaipur');
+    res.sendFile(indexFile);
 });
+
+app.get('/home', (req, res) => {
+    res.sendFile(`${publicPath}/success.html`);
+})
 
 const PORT = process.env.PORT || 3000;
 
