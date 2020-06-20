@@ -1,6 +1,7 @@
 const express = require('express');
 
 const userRouter = require('./routers/users');
+const classRouter = require('./routers/class');
 
 const app = express();
 
@@ -8,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(userRouter);
+app.use(classRouter);
 
 app.get('/', (req, res) => {
     res.send('testing hack jaipur');
