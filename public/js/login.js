@@ -4,8 +4,8 @@ const loginForm  = document.querySelector('.login');
 
 async function loginAuth(e) {
     e.preventDefault();
-    const username = usernameField.value;
-    const password = passwordField.value;
+    const username = usernameField.value.trim();
+    const password = passwordField.value.trim();
 
     const loginData = {
         username,
@@ -23,10 +23,9 @@ async function loginAuth(e) {
     });
 
     const data = await response.json();
-    console.log(data);
-    
-    usernameField.reset();
-    passwordField.reset();
+    document.cookie = data.token;
+
+    loginForm.reset();
 }
 
-loginForm.addEventListener('submit', loginAuth)
+loginForm.addEventListener('submit', loginAuth);

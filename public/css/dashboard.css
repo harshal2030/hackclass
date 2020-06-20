@@ -1,0 +1,255 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.sidenav {
+  background: #111f3f;
+  color: #fff;
+}
+
+.sidenav .wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 1.2rem 0;
+}
+
+.nav__brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-left: 0.4rem;
+}
+
+.nav__items {
+  margin-top: 2.8rem;
+  list-style: none;
+}
+
+.nav__item {
+  padding: 0.4rem 0;
+}
+
+.nav__item:nth-of-type(3) a::after {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #ff5e00;
+  margin-left: 0.8rem;
+}
+
+.nav__item a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.8rem 0.4rem;
+}
+
+.nav__item a svg {
+  margin-right: 0.6rem;
+}
+
+.nav__item a.active__item {
+  background: #fff;
+  color: #111f3f;
+  border-radius: 4px;
+}
+
+.nav__item a.active__item svg path {
+  fill: #111f3f;
+}
+
+.nav__item.sub__item a {
+  align-items: flex-start;
+  font-size: 0.75rem;
+}
+
+.nav__item.sub__item a img {
+  margin-right: 0.25rem;
+}
+
+.nav__item.sub__item a span {
+  display: block;
+  font-weight: normal;
+  margin-top: 0.35rem;
+}
+
+.content .wrapper {
+  padding-left: 4rem;
+  padding-right: 0.8rem;
+  margin-top: 6.4rem;
+  color: #111f3f;
+}
+
+.content h1,
+.content h2.active {
+  opacity: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  font-size: 1.6rem;
+}
+
+.content h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.classes .tabs,
+.assignments .tabs,
+.examinations .tabs {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.classes .tabs h2:not(:first-child),
+.assignments .tabs h2:not(:first-child),
+.examinations .tabs h2:not(:first-child) {
+  margin-left: 1.6rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1.4rem;
+  margin: 1rem 0 1.8rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 70%;
+  width: 0.2rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.card:first-of-type::before {
+  background: #0bd254;
+}
+
+.card:nth-of-type(2)::before {
+  background: #d2b70b;
+}
+
+.card:nth-of-type(3)::before {
+  background: #0bb7d2;
+}
+
+.card h3 {
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  line-height: 1.425;
+  margin-top: 0.2rem;
+}
+
+.card p.date {
+  font-size: 0.65rem;
+  color: #000;
+  margin-top: 0.4rem;
+}
+
+.cards.examinations__cards {
+  display: flex;
+}
+
+.card.examination__card {
+  width: 48%;
+}
+
+.card.examination__card h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card.examination__card .card__content {
+  width: 100%;
+}
+
+.card .details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  color: #000;
+}
+
+.user {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 78%;
+}
+
+.user img {
+  margin-right: 0.8rem;
+  width: 3.4rem;
+}
+
+.chat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #111f3f;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem 3.8rem;
+  border-top-left-radius: 4px;
+  cursor: pointer;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+}
+
+.chat svg {
+  margin-right: 0.6rem;
+}
+
+.chat p {
+  position: relative;
+}
+
+.highlight::after {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #ff5e00;
+  margin-left: 0.8rem;
+}
