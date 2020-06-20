@@ -16,12 +16,15 @@ Topic.init({
     },
     title: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
     },
     description: {
         type: DataTypes.STRING,
     },
+    attachements: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        defaultValue: [],
+    }
 }, {
     sequelize,
     modelName: 'topics',
