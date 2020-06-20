@@ -23,9 +23,17 @@ async function loginAuth(e) {
     });
 
     const data = await response.json();
+<<<<<<< HEAD
     document.cookie = data.token;
 
     loginForm.reset();
+=======
+    console.log(data);
+    window.location.replace('https://testreactapp.me/home');
+    
+    usernameField.reset();
+    passwordField.reset();
+>>>>>>> e7ebae29b584c10ba3e09e5f246de51aa44d8d87
 }
 
 loginForm.addEventListener('submit', loginAuth);
