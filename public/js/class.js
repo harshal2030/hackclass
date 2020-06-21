@@ -33,8 +33,8 @@ async function createClass(e) {
         headers: requestHeaders,
         body: JSON.stringify({className: code})
     });
-    const data = response.json();
-    console.log(response.status);
+    const data = await response.json();
+    // console.log(response.status);
     console.log(data);
     createFrom.reset();
 }
