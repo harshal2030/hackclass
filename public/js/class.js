@@ -5,13 +5,14 @@ const createCode = createFrom.querySelector('input');
 
 const token = document.cookie;
 
+const requestHeaders = {
+    "Content-Type": 'application/json',
+    "Authorization": 'Bearer ' + token,
+};
+
 async function joinClass(e) {
     e.preventDefault();
     const code = joinCode.value;
-    const requestHeaders = {
-        "Content-Type": 'application/json',
-        "Authorization": 'Bearer ' + token,
-    };
     const response = await fetch(`https://testreactapp.me/class/join`, {
         method: 'POST',
         headers: requestHeaders,
