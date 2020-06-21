@@ -19,9 +19,9 @@ async function createClass(e) {
         "Content-Type": 'application/json',
     };
     const response = await fetch('https://testreactapp.me/class', {
-        method: 'post',
+        method: 'POST',
         headers: requestHeaders,
-        body: code
+        body: JSON.stringify({code})
     });
     const data = response.json();
     console.log(data);

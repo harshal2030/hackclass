@@ -29,6 +29,10 @@ async function loginAuth(e) {
         headers: requestHeaders,
         body: JSON.stringify(loginData)
     });
+
+    if (response.status !== 200) {
+        return alert("Somthing went wrong! double check your form or try again later");
+    }
     
     const data = await response.json();
     console.log(data);
@@ -60,6 +64,11 @@ async function signupAuth(e) {
         body: JSON.stringify(signupData)
     });
     
+
+    if (response.status !== 200) {
+        return alert("Somthing went wrong! double check your form or try again later");
+    }
+
     const data = await response.json();
     console.log(data);
 
