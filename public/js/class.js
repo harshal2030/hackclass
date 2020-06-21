@@ -3,10 +3,23 @@ const joinCode = joinForm.querySelector('input');
 const createFrom = document.querySelector('.create');
 const createCode = createFrom.querySelector('input');
 
+const token = document.cookie;
+// console.log(token);
+
+const requestHeaders = {
+    "Content-Type": 'application/json',
+    "Authorization": 'Bearer ' + token,
+};
+
 async function joinClass(e) {
     e.preventDefault();
     const code = joinCode.value;
-    const response = await fetch(`https://testreactapp.me/class/${code}`);
+    const response = await fetch(`https://testreactapp.me/class/join`, {
+        method: 'POST',
+        headers: requestHeaders,
+        body: JSON.stringify({ className: code }),
+    });
+    // console.log(response.status);
     const data = await response.json();
     console.log(data);
     joinForm.reset();
@@ -15,16 +28,13 @@ async function joinClass(e) {
 async function createClass(e) {
     e.preventDefault();
     const code = createCode.value;
-    const requestHeaders = {
-        "Content-Type": 'application/json',
-        authorization: `Bearer ${document.cookie}`
-    };
     const response = await fetch('https://testreactapp.me/class', {
         method: 'POST',
         headers: requestHeaders,
-        body: JSON.stringify({code})
+        body: JSON.stringify({className: code})
     });
-    const data = await response.text();
+    const data = response.json();
+    console.log(response.status);
     console.log(data);
     createFrom.reset();
 }
