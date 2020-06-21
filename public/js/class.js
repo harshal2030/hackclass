@@ -21,7 +21,7 @@ async function createClass(e) {
     const response = await fetch('https://testreactapp.me/class', {
         method: 'POST',
         headers: requestHeaders,
-        body: JSON.stringify({code})
+        body: JSON.stringify({className: code})
     });
     const data = response.json();
     console.log(data);
