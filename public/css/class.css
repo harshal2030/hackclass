@@ -90,20 +90,19 @@ main {
 
 .get__class {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2.5em;
   color: #111f3f;
   font-family: "Poppins", sans-serif;
 }
 
 .get__class--card {
-  padding: 2.4rem 2.8rem;
+  width: 30rem;
+  padding: 2rem 2.2rem;
   border-radius: 5px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-}
-
-.get__class--card:first-of-type {
-  margin-right: 2rem;
 }
 
 .get__class--card h2 {

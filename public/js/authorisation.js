@@ -32,7 +32,7 @@ async function loginAuth(e) {
     });
 
     if (response.status !== 200) {
-        return alert("Somthing went wrong! double check your form or try again later");
+        return alert("Incorrect username or password");
     }
     
     const data = await response.json();
@@ -67,7 +67,7 @@ async function signupAuth(e) {
     
 
     if (response.status !== 200) {
-        return alert("Somthing went wrong! double check your form or try again later");
+        return alert("Username not available");
     }
 
     const data = await response.json();

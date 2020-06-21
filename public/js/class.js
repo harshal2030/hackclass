@@ -4,7 +4,7 @@ const createFrom = document.querySelector('.create');
 const createCode = createFrom.querySelector('input');
 
 const token = document.cookie;
-console.log(token);
+// console.log(token);
 
 const requestHeaders = {
     "Content-Type": 'application/json',
@@ -19,7 +19,7 @@ async function joinClass(e) {
         headers: requestHeaders,
         body: JSON.stringify({ className: code }),
     });
-    console.log(response.status);
+    // console.log(response.status);
     const data = await response.json();
     console.log(data);
     joinForm.reset();
@@ -33,8 +33,8 @@ async function createClass(e) {
         headers: requestHeaders,
         body: JSON.stringify({className: code})
     });
-    const data = response.json();
-    console.log(response.status);
+    const data = await response.json();
+    // console.log(response.status);
     console.log(data);
     createFrom.reset();
 }
