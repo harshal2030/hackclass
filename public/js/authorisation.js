@@ -24,14 +24,14 @@ async function loginAuth(e) {
         "Content-Type": 'application/json',
     };
 
-    const response = await fetch('https://testreactapp.me/users/signup', {
+    const response = await fetch('https://testreactapp.me/users/login', {
         method: 'post',
         headers: requestHeaders,
         body: JSON.stringify(loginData)
     });
 
     if (response.status !== 200) {
-        return alert("Somthing went wrong! double check your form or try again later");
+        return alert("Incorrect username or password");
     }
     
     const data = await response.json();
@@ -66,7 +66,7 @@ async function signupAuth(e) {
     
 
     if (response.status !== 200) {
-        return alert("Somthing went wrong! double check your form or try again later");
+        return alert("Username not available");
     }
 
     const data = await response.json();
