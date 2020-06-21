@@ -33,6 +33,10 @@ app.get('/joinclass', (req, res) => {
     res.sendFile(`${publicPath}/pages/class.html`);
 })
 
+app.get('/joinedclass', (req, res) => {
+    res.sendFile(`${publicPath}/pages/joined.html`)
+})
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(3000);
