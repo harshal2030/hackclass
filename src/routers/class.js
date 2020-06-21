@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/class', auth, async (req, res) => {
     try {
         console.log(req.body);
-        const createdClass = await Class.create({ owner: req.user.username, ...req.body });
+        const createdClass = await Class.create({ owner: req.user.username, ...req.body }, {raw: true});
 
         res.send(createdClass);
     } catch (e) {
