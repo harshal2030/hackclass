@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="Icon_ionic-md-chatbubbles" data-name="Icon ionic-md-chatbubbles" transform="translate(-3.375 -3.375)">
-    <path id="Path_1" data-name="Path 1" d="M6.667,19.325a2.026,2.026,0,0,1-1.739-1.739V11.25H4.555a1.185,1.185,0,0,0-1.18,1.18V23.052L5.646,20.8H14a1.2,1.2,0,0,0,1.18-1.2v-.276Z" transform="translate(0 -3.677)" fill="#fff"/>
-    <path id="Path_2" data-name="Path 2" d="M20.281,3.375H9.441A1.359,1.359,0,0,0,8.086,4.73v8.778a1.362,1.362,0,0,0,1.355,1.359h9.248l2.947,2.058V4.73A1.359,1.359,0,0,0,20.281,3.375Z" transform="translate(-2.261)" fill="#fff"/>
-  </g>
-</svg>

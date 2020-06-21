@@ -67,12 +67,19 @@ main {
   padding: 0.6rem 0;
 }
 
+.login {
+  display: none;
+}
+
 .login label,
-.login input {
+.login input,
+.singup label,
+.singup input {
   display: block;
 }
 
-.login input {
+.login input,
+.signup input {
   width: 100%;
   background: transparent;
   padding: 0.4rem 0.2rem;
@@ -83,7 +90,8 @@ main {
   color: #fff;
 }
 
-.submit-login {
+.submit-login,
+.submit-signup {
   border: 2px solid #fff;
   outline: none;
   cursor: pointer;
