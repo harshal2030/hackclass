@@ -16,7 +16,7 @@ async function createClass(e) {
     e.preventDefault();
     const code = createCode.value;
     const requestHeaders = {
-        "Content-Type": 'application/json',
+        "Content-Type": 'application/json'
     };
     const response = await fetch('https://testreactapp.me/class', {
         method: 'post',
