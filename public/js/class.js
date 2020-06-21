@@ -16,14 +16,15 @@ async function createClass(e) {
     e.preventDefault();
     const code = createCode.value;
     const requestHeaders = {
-        "Content-Type": 'application/json'
+        "Content-Type": 'application/json',
+        authorization: `Bearer ${document.cookie}`
     };
     const response = await fetch('https://testreactapp.me/class', {
         method: 'POST',
         headers: requestHeaders,
         body: JSON.stringify({code})
     });
-    const data = response.json();
+    const data = await response.text();
     console.log(data);
     createFrom.reset();
 }
