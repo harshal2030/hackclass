@@ -39,7 +39,7 @@ async function loginAuth(e) {
     document.cookie = data.token;
 
     loginForm.reset();
-    // window.location.replace('https://testreactapp.me/home');
+    window.location.replace('https://testreactapp.me/home');
 }
 
 async function signupAuth(e) {
@@ -71,9 +71,10 @@ async function signupAuth(e) {
 
     const data = await response.json();
     console.log(data);
+    document.cookie = data.token;
 
     loginForm.reset();
-    // window.location.replace('https://testreactapp.me/home');
+    window.location.replace('https://testreactapp.me/home');
 }
 
 loginTab.addEventListener('click', () => {

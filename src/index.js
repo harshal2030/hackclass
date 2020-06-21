@@ -26,7 +26,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    res.sendFile(`${publicPath}/success.html`);
+    res.sendFile(`${publicPath}/pages/dashboard.html`);
+})
+
+app.get('/joinclass', (req, res) => {
+    res.sendFile(`${publicPath}/pages/class.html`);
 })
 
 const PORT = process.env.PORT || 3000;
