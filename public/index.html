@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackclass | A platform to provide digital classroom support for the new generation</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script src="./js/login.js" defer></script>
+    <script src="./js/authorisation.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -2709,20 +2709,35 @@
     <div class="authorisation">
         <div class="wrapper">
             <div class="auth-type">
-                <a href="#" class="btn">Login</a>
-                <a href="#" class="btn ghost-btn">Signup</a>
+                <a href="#" class="btn ghost-btn login-btn">Login</a>
+                <a href="#" class="btn signup-btn">Signup</a>
             </div>
 
             <form class="login">
                 <div class="input-field">
                     <label for="username">Username</label>
-                    <input class="username" type="text" id="username" name="username" autocomplete="off">
+                    <input required class="username" type="text" id="username" name="username" autocomplete="off">
                 </div>
                 <div class="input-field">
                     <label for="password">Password</label>
-                    <input class="password" type="password" name="password" id="password">
+                    <input required class="password" type="password" name="password" id="password">
                 </div>
                 <button class="submit-login" type="submit">Login</button>
+            </form>
+            <form class="signup">
+                <div class="input-field">
+                    <label for="name">Name</label>
+                    <input required class="name" type="text" id="name" name="name" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input required class="username" type="text" id="username" name="username" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input required class="password" type="password" name="password" id="password">
+                </div>
+                <button class="submit-signup" type="submit">Signup</button>
             </form>
         </div>
     </div>
