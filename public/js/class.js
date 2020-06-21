@@ -2,6 +2,7 @@ const joinForm = document.querySelector('.join');
 const joinCode = joinForm.querySelector('input');
 const createFrom = document.querySelector('.create');
 const createCode = createFrom.querySelector('input');
+console.log(document.cookie);
 
 async function joinClass(e) {
     e.preventDefault();
