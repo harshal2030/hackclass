@@ -3,6 +3,8 @@ const joinCode = joinForm.querySelector('input');
 const createFrom = document.querySelector('.create');
 const createCode = createFrom.querySelector('input');
 
+const classCodes = [];
+
 const token = document.cookie;
 // console.log(token);
 
@@ -23,6 +25,8 @@ async function joinClass(e) {
     const data = await response.json();
     console.log(data);
     joinForm.reset();
+    classCodes.push(code);
+    localStorage.setItem('codes', JSON.stringify(classCodes));
 }
 
 async function createClass(e) {

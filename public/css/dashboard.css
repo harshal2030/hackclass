@@ -64,6 +64,7 @@ main {
 }
 
 .nav__item a.active__item {
+  margin-right: -100%;
   background: #fff;
   color: #111f3f;
   border-radius: 4px;

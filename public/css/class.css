@@ -64,6 +64,7 @@ main {
 }
 
 .nav__item a.active__item {
+  margin-right: -100%;
   background: #fff;
   color: #111f3f;
   border-radius: 4px;
@@ -135,6 +136,23 @@ main {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+}
+
+.codes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.code__card {
+  text-transform: uppercase;
+  color: #111f3f;
+  font-weight: bold;
+  padding: 1em 2em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
 }
 
 .user {
