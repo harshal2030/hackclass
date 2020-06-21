@@ -3,20 +3,12 @@ const Topic = require('./../models/topic');
 const { auth } = require('./../middlewares/auth');
 const Class = require('../models/class');
 const { topicPath } = require('../utils/path')
+const fs = require('fs');
 
 const { nanoid } = require('nanoid')
 const multer = require('multer');
 
 const router = express.Router();
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, topicPath)
-    },
-    filename: (req, file, cb) => {
-        cb(null, nanoid()+file.originalname)
-    }
-})
 
 const upload = multer({
     limits: {
@@ -28,7 +20,7 @@ const upload = multer({
         }
 
         cb(undefined, true);
-    }
+    },
 })
 
 router.post('/topic', auth, async (req, res) => {
@@ -66,18 +58,46 @@ router.post('/topic', auth, async (req, res) => {
     }
 })
 
-router.post('/topics/attach', auth, async (req, res) => {
+router.post('/topics/attach', auth, upload.single('attachement'), async (req, res) => {
     try {
-        const topicName = req.body.title;
+        const title = req.body.title;
         const topic = await Topic.findOne({
             where: {
-                
+                title,
+            },
+            raw: true,
+        });
+
+        if (!topic) {
+            throw new Error();
+        }
+
+        const topicClass = Class.findOne({
+            where: {
+                className: topic.className,
+                owner: req.user.username,
+            },
+            raw: true,
+        });
+
+        if (!topicClass) {
+            throw new Error();
+        }
+
+        const fileName = `${nanoid()}.${req.file.originalname}`;
+
+        fs.writeFileSync(`${topicPath}/${fileName}`, req.file.buffer, { encoding:'ascii' });
+        await Topic.update({ attachments: [fileName, ...topic.attachements] }, {
+            where: {
+                className: topic.className,
+                title,
             }
         })
+        res.sendStatus(200)
     } catch (e) {
         console.log(e);
         res.sendStatus(400)
     }
-})
+});
 
 module.exports = router;

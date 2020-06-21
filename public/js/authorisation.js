@@ -14,6 +14,7 @@ async function loginAuth(e) {
     e.preventDefault();
     const username = loginUsername.value.trim();
     const password = loginPassword.value.trim();
+    console.log(username, password);
 
     const loginData = {
         username,
@@ -24,7 +25,7 @@ async function loginAuth(e) {
         "Content-Type": 'application/json',
     };
 
-    const response = await fetch('https://testreactapp.me/users/signup', {
+    const response = await fetch('https://testreactapp.me/users/login', {
         method: 'post',
         headers: requestHeaders,
         body: JSON.stringify(loginData)
